@@ -1,6 +1,6 @@
 # First, install the necessary libraries for the web app.
 # You can run this command in your terminal:
-# pip install Flask cohere python-dotenv
+# pip install Flask cohere python-dotenv gunicorn
 
 import os
 from flask import Flask, render_template_string, request
@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 # COHERE_API_KEY="your_api_key_here"
 load_dotenv()
 
-COHERE_API_KEY = os.getenv("sztIbfwPJ9abhjxMm7lVGLHmBTzd7p3vL7Ks0sOG")
+COHERE_API_KEY = os.getenv("COHERE_API_KEY")
 
 if not COHERE_API_KEY:
     raise ValueError("COHERE_API_KEY environment variable not set.")
